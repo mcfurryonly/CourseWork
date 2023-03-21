@@ -4,6 +4,18 @@ import java.util.stream.IntStream;
 public class Main {
     static int idIterator;
 
+    public static void employeeBase(Employee[] employees) {
+        System.out.println("База сотрудников: ");
+        for (int i = 0; i < employees.length ; i++) {
+
+            System.out.println(employees[i]);
+            System.out.println("-----------------");
+
+        }
+
+    }
+
+
     public static int sumOfSalary (Employee[] employees) {
         int sum = 0;
         for (Employee employee : employees) {
@@ -12,7 +24,7 @@ public class Main {
         return sum;
     }
 
-    public static int middleSalary(Employee[] employees) {
+    public static double middleSalary(Employee[] employees) {
         return sumOfSalary(employees) / employees.length;
     }
 
@@ -60,15 +72,8 @@ public class Main {
                 new Employee("Ken","Ortego", 102000, 4),
                 new Employee("Wendy","Seylor", 101100, 5),
         };
-        System.out.println("База сотрудников: ");
-        for (int i = 0; i < employees.length ; i++) {
 
-            System.out.println(employees[i].toString());
-            System.out.println("-----------------");
-            for (int j = 0; j < employees.length; j++) {
-            }
-        }
-
+        employeeBase(employees);
         System.out.println("\n Total salary: " + sumOfSalary(employees) + " rub");
         System.out.println("\n Сотрудник с минимальной зарплатой: " + minSalary(employees));
         System.out.println("\n Сотрудник с максимальной зарплатой: " + maxSalary(employees));
